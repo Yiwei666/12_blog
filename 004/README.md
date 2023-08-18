@@ -75,6 +75,12 @@ cat /path/to/.htpasswd
 
 **三、修改nginx.conf配置文件限制指定目录的访问**
 
+注意修改
+
+- 需要限制访问的root根目录
+
+- 需要限制访问的html文件
+
 ```
     server {
         listen 443 ssl;
@@ -85,11 +91,12 @@ cat /path/to/.htpasswd
 
 
         location / {
-        	auth_basic "Restricted Access";
-	        auth_basic_user_file /home/01_html/01_htpasswd/.htpasswd;  # 指向存储用户名和加密密码的文件
+            auth_basic "Restricted Access";
+	    auth_basic_user_file /home/01_html/01_htpasswd/.htpasswd;  # 指向存储用户名和加密密码的文件
             root /home/01_html;                                        # 指定的服务器根目录，注意不要选择root目录，一般用home目录
             index mainpage.html;                                       # 访问ip默认显示的网页，该网页需要置于上述根目录下
         }
+
 ```
 
 
