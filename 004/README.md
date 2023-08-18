@@ -73,4 +73,25 @@ cat /path/to/.htpasswd
 
 使用 htpasswd 命令创建和管理密码文件是保护您的网站或特定页面的一种有效方法。记得备份密码文件，并根据需要定期更新用户密码。
 
+**三、修改nginx.conf配置文件限制指定目录的访问**
+
+```
+    server {
+        listen 443 ssl;
+        server_name domain.com www.domain.com;                    # 替换为您的域名
+        ssl_certificate /etc/nginx/key_crt/domain.com.crt;        # 替换为您下载的证书文件路径
+        ssl_certificate_key /etc/nginx/key_crt/domain.com.key;    # 替换为您下载的密钥文件路径
+        ssl_protocols TLSv1.2 TLSv1.3;                            # 选择您需要支持的 SSL/TLS 协议版本
+
+
+        location / {
+        	auth_basic "Restricted Access";
+	        auth_basic_user_file /home/01_html/01_htpasswd/.htpasswd;  # 指向存储用户名和加密密码的文件
+            root /home/01_html;                                        # 指定的服务器根目录，注意不要选择root目录，一般用home目录
+            index mainpage.html;                                       # 访问ip默认显示的网页，该网页需要置于上述根目录下
+        }
+```
+
+
+
 
