@@ -1,4 +1,4 @@
-🟢 以下安装教程参考自：https://github.com/Yiwei666/04_-configure-file/blob/main/v2ray_win_config.json
+🟢 以下安装教程参考自：https://github.com/hausa-han/Cloudflare-WARP-proxy/blob/main/README.md
 
 
 使用Cloudflare WARP进行代理，解锁openai等服务。
