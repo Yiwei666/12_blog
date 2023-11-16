@@ -10,6 +10,8 @@
 
 ### 其他文章
 ---
-- [php的安装和配置](https://github.com/Yiwei666/04_-configure-file/blob/main/README.md)
+- [vaspkit快速安装及能带和态密度计算](https://github.com/Yiwei666/13_vasp/wiki/03_vaspkit%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85)
 - [同步工具rsync安装使用](https://github.com/Yiwei666/03_Python-PHP/wiki/09_%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7rsync%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8#1-rsync%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8)
 - [ubuntu系统中nginx及php安装和环境配置](https://github.com/Yiwei666/04_-configure-file/blob/main/README.md)
+
+
