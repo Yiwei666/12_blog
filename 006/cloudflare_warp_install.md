@@ -12,24 +12,29 @@ https://developers.cloudflare.com/warp-client/setting-up/linux
 ```
 warp-cli register
 ```
+
 2.设置WARP代理模式
 ```
 warp-cli set-mode proxy
 ```
+
 3.连接WARP
 ```
 warp-cli connect
 ```
 此时WARP会使用socks5本机代理127.0.0.1：40000
+
 4.打开warp always-on
 ```
 warp-cli enable-always-on
 ```
+
 6.测试socks代，理检查ip是否改变
 ```
 export ALL_PROXY=socks5://127.0.0.1:40000
 curl ifconfig.me
 ```
+
 7.修改v2ray/xray outbounds和分流规则，这里可以参考以下配置可自由发挥。
 ~ 建议在修改配置前对原有配置文件进行.bak备份。 ~
 ```
