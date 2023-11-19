@@ -9,17 +9,17 @@ https://developers.cloudflare.com/warp-client/setting-up/linux
 注：以下过程是在v2ray/xray的服务器上操作，而不是在自己的机器上。
 
 1. 注册客户端
-```
+```bash
 warp-cli register
 ```
 
 2. 设置WARP代理模式
-```
+```bash
 warp-cli set-mode proxy
 ```
 
 3. 连接WARP
-```
+```bash
 warp-cli connect
  
 # warp-cli disconnect   # 断开连接
@@ -27,7 +27,7 @@ warp-cli connect
 此时WARP会使用socks5本机代理127.0.0.1：40000
 
 4. 打开warp always-on
-```
+```bash
 warp-cli enable-always-on
  
 # warp-cli status     # 查看warp状态
@@ -36,7 +36,7 @@ warp-cli enable-always-on
 ```
 
 5. 测试socks代理，检查ip是否改变
-```
+```bash
 # 命令是用于在当前的终端或 shell 会话中设置代理服务器，以便所有的网络请求都可以通过指定的 SOCKS5 代理服务器进行转发。
 # 该终端中发起的所有网络连接都会通过该代理服务器进行路由
 # 下面命令设置的环境变量只会在当前会话中生效，当您关闭当前终端或退出当前会话时，该环境变量也会失效。
@@ -55,19 +55,19 @@ curl ifconfig.me      # 从终端或命令行获取当前设备的公共 IP 地�
 
 6. 修改v2ray/xray outbounds和分流规则，这里可以参考以下配置可自由发挥。
 ~ 建议在修改配置前对原有配置文件进行.bak备份。 ~
-```
+```bash
 vim /usr/local/etc/v2ray/config.json
 ```
 这是v2ray或者xray的配置文件，如果你的用户是root，那么它可能在/etc/v2ray/config.json
 
 inbounds要启动sniffing
-```
+```json
 "sniffing": {
     "enabled": true,
     "destOverride": ["http", "tls"]
 }
 ```
-```
+```json
  "outbounds": [
         {
             "tag": "default",
@@ -108,7 +108,7 @@ inbounds要启动sniffing
 
 
 8.重新启动v2ray/xray
-```
+```bash
 systemctl restart v2ray/xray
 systemctl status v2ray/xray
 ```
