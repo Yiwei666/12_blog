@@ -14,5 +14,5 @@
 - [同步工具rsync安装使用](https://github.com/Yiwei666/03_Python-PHP/wiki/09_%E5%90%8C%E6%AD%A5%E5%B7%A5%E5%85%B7rsync%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8#1-rsync%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8)
 - [ubuntu系统中nginx及php安装和环境配置](https://github.com/Yiwei666/04_-configure-file/blob/main/README.md)
 - [Anaconda/Miniconda安装和配置](https://github.com/Yiwei666/03_Python-PHP/wiki/03_Anaconda%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE)
-
+- [网站、软件及系统深色主题设置](https://github.com/aweill/02_html/wiki/02_%E7%BD%91%E7%AB%99%E3%80%81%E8%BD%AF%E4%BB%B6%E5%8F%8A%E7%B3%BB%E7%BB%9F%E6%B7%B1%E8%89%B2%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE)
 
