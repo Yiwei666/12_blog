@@ -124,6 +124,16 @@ google github上就能找到，下载后放在 /usr/local/bin
 
 ### 3. warp命令行
 
+1. 常用命令
+
+```
+warp-cli  --help
+warp-cli  status
+```
+
+
+2. 所有命令行
+
 ```
 Usage: warp-cli [OPTIONS] <COMMAND>
 
