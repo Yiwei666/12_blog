@@ -7,7 +7,49 @@ Cloudfalre官方页面有详细的安装流程和原理，不赘述。
 https://developers.cloudflare.com/warp-client/setting-up/linux
 
 
-# 2. cloudflare warp配置
+# 2. cloudflare warp 安装
+
+The supported releases are:
+
+- Jammy (22.04)
+- Focal (20.04)
+- Bionic (18.04)
+- Xenial (16.04)
+
+### 1. Add cloudflare gpg key
+
+```
+curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+```
+
+这条命令下载 Cloudflare Warp 的 GPG 密钥，然后使用 `gpg` 工具进行解密并将其放置在 `/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg` 文件中。
+
+
+### 2. Add this repo to your apt repositories
+
+```
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+```
+
+这条命令将 Cloudflare Warp 的软件源添加到 apt 的仓库中。它会在 `/etc/apt/sources.list.d/cloudflare-client.list` 文件中添加一行，指定 Cloudflare Warp 的仓库地址和组件。
+
+
+### 3. Install
+
+```
+sudo apt-get update && sudo apt-get install cloudflare-warp
+```
+
+这条命令首先更新 apt 软件包列表，然后安装 Cloudflare Warp 软件包。
+
+
+### 参考资料
+1. https://developers.cloudflare.com/warp-client/get-started/linux/
+2. https://pkg.cloudflareclient.com/#ubuntu
+
+
+
+# 3. cloudflare warp配置
 
 🟢 以下安装教程参考自：https://github.com/hausa-han/Cloudflare-WARP-proxy/blob/main/README.md
 
