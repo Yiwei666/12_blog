@@ -101,7 +101,61 @@ curl ifconfig.me      # 从终端或命令行获取当前设备的公共 IP 地�
 # curl chat.openai.com --socks5 127.0.0.1:40000 -v    # 通过 SOCKS5 代理服务器与 chat.openai.com 进行通信，并在终端输出详细的调试信息，包括请求头、响应头和数据内容等。
 ```
 
-6. 修改v2ray/xray outbounds和分流规则，这里可以参考以下配置可自由发挥。
+6. 查看cloudflare warp的设置
+
+运行`warp-cli settings`，查看cloudflare warp的设置，确保上述命令行设置都已经生效
+
+```
+Merged configuration:
+Always On: true
+Switch Locked: false
+Mode: WarpProxy on port 40000
+Cloudflare for Families: Off
+Disabled for Wifi: false
+Disabled for Ethernet: false
+Onboarding: true
+Exclude mode, with hosts/ips:
+  10.0.0.0/8
+  100.64.0.0/10
+  169.254.0.0/16
+  172.16.0.0/12
+  192.0.0.0/24
+  192.168.0.0/16
+  224.0.0.0/24
+  240.0.0.0/4
+  239.255.255.250/32
+  255.255.255.255/32
+  fe80::/10
+  fd00::/8
+  ff01::/16
+  ff02::/16
+  ff03::/16
+  ff04::/16
+  ff05::/16
+  fc00::/7
+
+Fallback domains:
+  intranet
+  internal
+  private
+  localdomain
+  domain
+  lan
+  home
+  host
+  corp
+  local
+  localhost
+  home.arpa
+  invalid
+  test
+Daemon Teams Auth: false
+Disable Auto Fallback: false
+Allow Updates: true
+```
+
+
+7. 修改v2ray/xray outbounds和分流规则，这里可以参考以下配置可自由发挥。
 ~ 建议在修改配置前对原有配置文件进行.bak备份。 ~
 ```bash
 vim /usr/local/etc/v2ray/config.json
@@ -155,13 +209,14 @@ inbounds要启动sniffing
 请将`example.com`替换为你想要解锁访问的网站，例如访问chatGPT需要的：`openai.com`和`hcaptcha.com`。
 
 
-8.重新启动v2ray/xray
+8. 重新启动v2ray/xray
 ```bash
 systemctl restart v2ray/xray
 systemctl status v2ray/xray
 ```
 xray可能需要下载geosite和geoip，
 google github上就能找到，下载后放在 /usr/local/bin
+
 
 
 # 3. warp命令行
