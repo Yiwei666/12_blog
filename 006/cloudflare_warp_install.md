@@ -174,7 +174,7 @@ warp-cli  status
 ```
 
 
-2. 所有命令行
+2. `warp-cli 2023.3.398`版本所有命令行
 
 ```
 Usage: warp-cli [OPTIONS] <COMMAND>
