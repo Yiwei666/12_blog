@@ -164,19 +164,19 @@ xray可能需要下载geosite和geoip，
 google github上就能找到，下载后放在 /usr/local/bin
 
 
-### 3. warp命令行
+# 3. warp命令行
 
-1. 常用命令
+### 1. 常用命令
 
-```
+```bash
 warp-cli  --help
 warp-cli  status
 ```
 
 
-2. `warp-cli 2023.3.398`版本所有命令行
+### 2. `warp-cli 2023.3.398`版本所有命令行
 
-```
+```bash
 Usage: warp-cli [OPTIONS] <COMMAND>
 
 Commands:
@@ -247,4 +247,36 @@ Options:
   -h, --help        Print help
   -V, --version     Print version
 ```
+
+### 2. `warp-cli 2024.2.62`版本命令行
+
+```bash
+Usage: warp-cli [OPTIONS] <COMMAND>
+
+Commands:
+  connect               Maintain a connection whenever possible
+  debug                 Debugging commands
+  disconnect            Disconnect the client
+  dns                   Configure DNS settings
+  mdm                   MDM configs
+  mode                  Set the client's general operating mode
+  override              Allow temporary overrides of administrative settings
+  proxy                 Configure proxy mode settings
+  registration          Registration settings
+  settings              Show or alter general application settings
+  status                Return the current connection status
+  trusted               Configure trusted networks where the client will be automatically disabled (Consumer only)
+  tunnel                Configure tunnel settings
+  vnet                  Get or specify connected virtual network
+  generate-completions  Generate completions for a given shell and print to stdout
+  help                  Print this message or the help of the given subcommand(s)
+
+Options:
+  -l, --listen      Listen for status changes and DNS logs (if enabled)
+      --accept-tos  Accept the Terms of Service agreement
+  -v, --verbose...  Enable verbose output. Multiple "v"s adds more verbosity
+  -h, --help        Print help
+  -V, --version     Print version
+```
+
 
