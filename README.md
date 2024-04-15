@@ -7,11 +7,19 @@
 5. [WordPress数据备份和迁移](005/005.md)
 6. [V2Ray+ws+tls+web+tor配置教程](006/006.md)
 
+
+
+
 # 2. 888
 
 1. [rclone连接到onedrive](/888/8-001.md)
 2. [cloudflare zero trust](/888/8-002.md)
 3. [Microsoft 365 E5 开发人员订阅](/888/8-003.md)
+4. [Visual Studio Code配置](/888/8-004.md)
+
+
+
+
 
 # 3. 其他文章
 
