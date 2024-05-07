@@ -3,7 +3,7 @@
 1. [常用软件本地socks5代理设置](001/001.md)
 2. [MySQL、phpmyadmin 安装及使用](002/002.md)
 3. [WordPress安装及使用](003/003.md) 
-4. [身份验证](004/004.md)
+4. [htpasswd 身份验证](004/004.md)
 5. [WordPress数据备份和迁移](005/005.md)
 6. [V2Ray+ws+tls+web+tor配置教程](006/006.md)
 
