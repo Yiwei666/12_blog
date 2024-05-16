@@ -72,11 +72,11 @@ warp-cli connect
  
 # warp-cli disconnect   # 断开连接
 ```
-此时WARP会使用socks5本机代理127.0.0.1：40000
+此时WARP会使用socks5本机代理 `127.0.0.1：40000`
 
 4. 打开 `warp always-on`
 
-注意：`warp-cli enable-always-on`命令在新版本的warp中已经弃用，默认 `Always On: true` 是打开的
+注意：`warp-cli enable-always-on`命令在新版本 (warp-cli 2024.2.62) 的warp中已经弃用，默认 `Always On: true` 是打开的
 
 ```bash
 warp-cli enable-always-on
@@ -85,7 +85,6 @@ warp-cli enable-always-on
 # warp-cli help       # 查看warp-cli命令帮助
 # warp-cli settings   # 查看warp-cli命令设置
 ```
-
 
 5. 测试socks代理，检查ip是否改变
 
