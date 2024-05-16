@@ -63,7 +63,10 @@ warp-cli register
 
 2. 设置WARP代理模式
 ```bash
-warp-cli set-mode proxy
+warp-cli set-mode proxy     # 旧版本命令
+
+# Warning: The "set-mode" command will be deprecated in a future release. Please use "mode" instead
+warp-cli mode proxy         # 新版本命令
 ```
 
 3. 连接WARP
