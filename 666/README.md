@@ -5,3 +5,4 @@
 3. [Materials Studio建模](/666/6-003.md)
 4. [Materials project](/666/6-004.md)
 5. [vesta可视化](/666/6-005.md)
+6. [multiwfn电子结构分析](/666/6-006.md)
