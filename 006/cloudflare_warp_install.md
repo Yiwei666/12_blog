@@ -58,7 +58,10 @@ sudo apt-get update && sudo apt-get install cloudflare-warp
 
 1. 注册客户端
 ```bash
+# 旧版本注册命令
 warp-cli register
+
+warp-cli registration new
 ```
 
 2. 设置WARP代理模式
