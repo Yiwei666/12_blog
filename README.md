@@ -53,5 +53,6 @@
 - [云服务器迁移流程](https://github.com/Yiwei666/10_private_code/tree/main/03_crontab)
 - [windows命令行及快捷键](https://github.com/Yiwei666/03_Python-PHP/wiki/04_cmd%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%8A%E5%BF%AB%E6%8D%B7%E9%94%AE)
 - [nginx、php安装及反向代理配置](https://github.com/Yiwei666/04_-configure-file/blob/main/README.md)
+- [税务登记与线上运营](https://github.com/aweill/note/blob/master/blog/007.md)
 
 
