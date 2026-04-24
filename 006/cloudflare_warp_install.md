@@ -257,7 +257,9 @@ Merged configuration:
 (not set)	Firewall Scope: All interfaces
 ```
 
-
+**注意**：
+1. Cloudflare 官方文档说明，Local proxy 模式下 WARP 会监听 `127.0.0.1` 的配置端口，默认端口是 40000；应用需要显式配置使用这个代理。官方 WARP 模式说明也写明，Local proxy 模式支持应用通过 HTTPS 或 SOCKS5 使用 WARP。
+2. MASQUE 是 WARP 客户端与 Cloudflare 服务器之间的底层隧道协议。
 
 
 
