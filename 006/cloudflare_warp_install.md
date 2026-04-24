@@ -167,6 +167,10 @@ curl https://www.cloudflare.com/cdn-cgi/trace
 # warp-cli register
 
 warp-cli registration new
+
+# 查看注册状态
+warp-cli registration show
+
 ```
 
 2. 设置WARP代理模式
@@ -343,6 +347,7 @@ warp-cli  --help
 warp-cli  status
 warp-cli settings
 
+warp-cli registration show    # 查看注册状态
 
 warp-cli --version            # 查看已经安装的版本
 
