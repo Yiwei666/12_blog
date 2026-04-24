@@ -134,9 +134,6 @@ cloudflare-warp:
 # 更新
 apt install --only-upgrade cloudflare-warp
 
-# 重启服务
-systemctl restart warp-svc
-
 # 查看服务状态
 systemctl status warp-svc
 
@@ -145,9 +142,116 @@ warp-cli --version
 
 # 查看连接状态
 warp-cli status
+```
 
-# 验证 WARP 是否生效，输出有 warp=on 则生效
-curl https://www.cloudflare.com/cdn-cgi/trace
+5. 重新注册 WARP 并配置
+
+新版 WARP 在 MASQUE + Local Proxy 模式下读取到旧注册信息/旧密钥格式，导致公钥长度不匹配。因此，需要重新注册 WARP 并配置。
+
+```
+# 断开当前 WARP 连接（确保后续操作在干净状态下进行）
+warp-cli disconnect
+
+# 删除本机已有的 WARP 注册信息（清除旧密钥/配置）
+warp-cli registration delete
+
+# 重新注册 WARP 客户端（生成新的密钥和设备身份）
+warp-cli registration new
+
+# 设置为本地代理模式（WarpProxy，默认监听 127.0.0.1:40000）
+warp-cli mode proxy
+
+# 重启 WARP 服务，使配置生效
+systemctl restart warp-svc
+
+# 等待服务完全启动（避免后续命令执行过快）
+sleep 5
+
+# 连接到 WARP 网络
+warp-cli connect
+
+# 等待连接建立（确保状态稳定）
+sleep 5
+
+# 查看当前 WARP 连接状态（应为 Connected）
+warp-cli status
+
+# 检查本机 40000 端口是否被 WARP 监听（判断代理是否启动成功）
+ss -ltnp | grep 40000
+
+# 通过 SOCKS5 代理测试 WARP 是否生效（应返回 warp=on）
+curl -x socks5h://127.0.0.1:40000 https://www.cloudflare.com/cdn-cgi/trace
+```
+
+
+- `warp-cli settings`查看新版本（`warp-cli 2026.3.846.0`版本）的设置如下：
+
+```
+(base) root@racknerd-47ac22:/home/01_html# warp-cli settings
+Merged configuration:
+(not set)	Compliance Environment: Normal
+(derived)	Always On: true
+(override)	Switch Locked: false
+(user set)	Mode: WarpProxy on port 40000
+(network policy)	WARP tunnel protocol: MASQUE
+(not set)	MASQUE Protocol Settings: 
+  HTTP Version: MASQUE (HTTP/3 with HTTP/2 fallback)
+(network policy)	Post-quantum support for MASQUE: Enabled (downgrades allowed)
+(default)	Disabled for Wifi: false
+(default)	Disabled for Ethernet: false
+(not set)	Resolve via: cloudflare-dns.com @ [162.159.36.1, 162.159.46.1, 2606:4700:4700::1111, 2606:4700:4700::1001]
+(not set)	qlog log until: FutureSystemTime(None)
+(default)	Onboarding: true
+(api defaults)	Exclude mode, with hosts/ips:
+  10.0.0.0/8
+  100.64.0.0/10
+  169.254.0.0/16
+  172.16.0.0/12
+  192.0.0.0/24
+  192.168.0.0/16
+  224.0.0.0/24
+  240.0.0.0/4
+  239.255.255.250/32
+  255.255.255.255/32
+  fe80::/10
+  fd00::/8
+  ff01::/16
+  ff02::/16
+  ff03::/16
+  ff04::/16
+  ff05::/16
+  fc00::/7
+  17.249.0.0/16
+  17.252.0.0/16
+  17.57.144.0/22
+  17.188.128.0/18
+  17.188.20.0/23
+  2620:149:a44::/48
+  2403:300:a42::/48
+  2403:300:a51::/48
+  2a01:b740:a42::/48
+
+(default)	Fallback domains:
+  corp
+  domain
+  home
+  home.arpa
+  host
+  internal
+  intranet
+  invalid
+  lan
+  local
+  localdomain
+  localhost
+  private
+  test
+(not set)	Daemon Teams Auth: false
+(default)	Disable Auto Fallback: false
+(not set)	Allow Updates: true
+(not set)	Registration Scope: System
+(not set)	Register Tunnel Interface IP: false
+(not set)	Firewall Scope: All interfaces
 ```
 
 
