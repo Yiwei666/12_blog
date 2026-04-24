@@ -18,6 +18,13 @@ https://developers.cloudflare.com/warp-client/setting-up/linux
 - Bionic (18.04)
 - Xenial (16.04)
 
+
+```sh
+# 确认ubuntu版本号
+lsb_release -cs
+```
+
+
 ### 1. Add cloudflare gpg key
 
 ```bash
