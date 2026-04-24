@@ -60,13 +60,97 @@ sudo apt-get update && sudo apt-get install cloudflare-warp
 
 ## 2. 版本更新
 
-```
+1. 查看当前版本
+
+```sh
 # 查看已经安装的版本
 warp-cli --version
 
+# 查看 cloudflare-warp 这个软件包的安装情况、候选版本，以及它来自哪个软件源
+apt policy cloudflare-warp
+```
 
+如果看到类似：
+
+```sh
+(base) root@racknerd-47ac22:/home/01_html# apt policy cloudflare-warp
+cloudflare-warp:
+  Installed: 2023.3.398-1
+  Candidate: 2023.3.398-1
+  Version table:
+ *** 2023.3.398-1 100
+        100 /var/lib/dpkg/status
+```
+
+说明当前 APT 没有从 Cloudflare 仓库获取到新版。
+
+
+2. 重新添加 Cloudflare WARP 官方 GPG key
+
+```sh
+# usr/share/keyrings 是存放第三方软件源公钥的推荐位置，在大多数标准的 Ubuntu 或 Debian 系统中，它通常是存在的
+mkdir -p /usr/share/keyrings
+
+# 1. 从 Cloudflare 的服务器上下载名为 pubkey.gpg 的公钥文件
+# 2. | 把下载到的数据传给下一个程序
+# 3. --dearmor 将下载到的文本格式（ASCII armored）的密钥转换成 Linux 包管理器更容易读取的 二进制格式
+# 4. --output 将转换后的二进制密钥保存在第一条命令创建的目录下，命名为 cloudflare-warp-archive-keyring.gpg
+curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+```
+这是 Cloudflare WARP 官方仓库页面给出的 key 添加方式。
+
+
+3. 重新添加 WARP 的 apt 源
+
+```sh
+# 把 Cloudflare WARP 官方下载地址注册到的系统软件源里
+echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+
+# 然后更新索引
+sudo apt update
+
+# 查看是否已有新版候选版本
+apt policy cloudflare-warp
+```
+
+正常情况下应该看到类似：
 
 ```
+(base) root@racknerd-47ac22:/home/01_html# apt policy cloudflare-warp
+cloudflare-warp:
+  Installed: 2023.3.398-1
+  Candidate: 2026.3.846.0
+  Version table:
+     2026.3.846.0 500
+        500 https://pkg.cloudflareclient.com jammy/main amd64 Packages
+ *** 2023.3.398-1 100
+        100 /var/lib/dpkg/status
+```
+
+
+4. 更新 Cloudflare WARP
+
+```
+# 更新
+apt install --only-upgrade cloudflare-warp
+
+# 重启服务
+systemctl restart warp-svc
+
+# 查看服务状态
+systemctl status warp-svc
+
+# 查看版本
+warp-cli --version
+
+# 查看连接状态
+warp-cli status
+
+# 验证 WARP 是否生效，输出有 warp=on 则生效
+curl https://www.cloudflare.com/cdn-cgi/trace
+```
+
+
 
 
 
