@@ -113,7 +113,7 @@ sudo apt update
 apt policy cloudflare-warp
 ```
 
-正常情况下应该看到类似：
+正常情况下应该看到如下类似，即`Candidate`中有新版本。
 
 ```
 (base) root@racknerd-47ac22:/home/01_html# apt policy cloudflare-warp
