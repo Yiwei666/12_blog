@@ -6,6 +6,7 @@
 4. [htpasswd 身份验证](004/004.md)
 5. [WordPress数据备份和迁移](005/005.md)
 6. [V2Ray+ws+tls+web+tor配置教程](006/006.md)
+7. [cloudflare warp安装和配置](006/cloudflare_warp_install.md)
 
 
 
