@@ -45,9 +45,9 @@ sudo apt-get update && sudo apt-get install cloudflare-warp
 这条命令首先更新 apt 软件包列表，然后安装 Cloudflare Warp 软件包。
 
 
-### 参考资料
-1. https://developers.cloudflare.com/warp-client/get-started/linux/
-2. https://pkg.cloudflareclient.com/#ubuntu
+- 参考资料
+  1. https://developers.cloudflare.com/warp-client/get-started/linux/
+  2. https://pkg.cloudflareclient.com/#ubuntu
 
 
 
