@@ -60,6 +60,8 @@ sudo apt-get update && sudo apt-get install cloudflare-warp
 
 ## 2. 版本更新
 
+### 1. 更新warp
+
 1. 查看当前版本
 
 ```sh
@@ -144,7 +146,8 @@ warp-cli --version
 warp-cli status
 ```
 
-5. 重新注册 WARP 并配置
+
+### 2. 重新注册 WARP 并配置
 
 新版 WARP 在 MASQUE + Local Proxy 模式下读取到旧注册信息/旧密钥格式，导致公钥长度不匹配。因此，需要重新注册 WARP 并配置。
 
