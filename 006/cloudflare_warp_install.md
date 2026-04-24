@@ -341,6 +341,12 @@ google github上就能找到，下载后放在 /usr/local/bin
 ```bash
 warp-cli  --help
 warp-cli  status
+warp-cli settings
+
+
+warp-cli --version            # 查看已经安装的版本
+
+apt policy cloudflare-warp    # 查看 cloudflare-warp 这个软件包的安装情况、候选版本，以及它来自哪个软件源
 ```
 
 
