@@ -151,7 +151,7 @@ warp-cli status
 
 新版 WARP 在 MASQUE + Local Proxy 模式下读取到旧注册信息/旧密钥格式，导致公钥长度不匹配。因此，需要重新注册 WARP 并配置。
 
-```
+```sh
 # 断开当前 WARP 连接（确保后续操作在干净状态下进行）
 warp-cli disconnect
 
