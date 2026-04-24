@@ -11,7 +11,7 @@ https://developers.cloudflare.com/warp-client/setting-up/linux
 
 ## 1. 首次安装
 
-The supported releases are:
+支持的ubuntu版本:
 
 - Jammy (22.04)
 - Focal (20.04)
@@ -53,6 +53,13 @@ sudo apt-get update && sudo apt-get install cloudflare-warp
 
 ## 2. 版本更新
 
+```
+# 查看已经安装的版本
+warp-cli --version
+
+
+
+```
 
 
 
