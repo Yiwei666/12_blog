@@ -130,7 +130,7 @@ cloudflare-warp:
 
 4. 更新 Cloudflare WARP
 
-```
+```sh
 # 更新
 apt install --only-upgrade cloudflare-warp
 
