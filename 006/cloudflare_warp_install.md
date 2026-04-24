@@ -9,6 +9,8 @@ https://developers.cloudflare.com/warp-client/setting-up/linux
 
 # 2. cloudflare warp 安装
 
+## 1. 首次安装
+
 The supported releases are:
 
 - Jammy (22.04)
@@ -46,6 +48,11 @@ sudo apt-get update && sudo apt-get install cloudflare-warp
 ### 参考资料
 1. https://developers.cloudflare.com/warp-client/get-started/linux/
 2. https://pkg.cloudflareclient.com/#ubuntu
+
+
+
+## 2. 版本更新
+
 
 
 
@@ -229,7 +236,7 @@ google github上就能找到，下载后放在 /usr/local/bin
 
 
 
-# 3. warp命令行
+# 4. warp命令行
 
 ### 1. 常用命令
 
