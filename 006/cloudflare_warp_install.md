@@ -352,6 +352,9 @@ warp-cli registration show    # 查看注册状态
 warp-cli --version            # 查看已经安装的版本
 
 apt policy cloudflare-warp    # 查看 cloudflare-warp 这个软件包的安装情况、候选版本，以及它来自哪个软件源
+
+# 查看 Cloudflare WARP 服务的最近 100 行系统日志
+journalctl -u warp-svc -n 100 --no-pager
 ```
 
 
