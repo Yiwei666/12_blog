@@ -33,7 +33,7 @@
 
 1. cron定时任务
 
-```
+```sh
 # 每周五的4点7分定时下载，cc1-2服务器
 7 4 * * 5 /usr/bin/bash /home/01_html/91_download_v2rayng_apk.sh >> /home/01_html/91_download_v2rayng_apk.log 2>&1
 ```
