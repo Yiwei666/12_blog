@@ -353,7 +353,13 @@ curl ifconfig.me      # 从终端或命令行获取当前设备的公共 IP 地�
 
 6. 查看cloudflare warp的设置
 
-运行`warp-cli settings`，查看cloudflare warp的设置，确保上述命令行设置都已经生效
+运行查看设置的命令
+
+```
+warp-cli settings
+```
+
+查看cloudflare warp的设置，确保上述命令行设置都已经生效
 
 ```
 Merged configuration:
